@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    //ONLY FOR WEAPONS CAN SHOOT
+    //ONLY FOR WEAPONS CAN SHOOT & vain se yks rynkky
 
     [SerializeField] Camera FPCamera; //tähän tulee (MainCamera)
     [SerializeField] float range = 100f;

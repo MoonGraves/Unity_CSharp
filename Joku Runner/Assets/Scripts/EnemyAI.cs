@@ -9,6 +9,7 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] Transform target; //target jahtaa pelaajan
     [SerializeField] float chaseRange = 10f; //seuraa / jahtaa pelaajan  & että saapuu sen tietyn lähistöllä alkaa jahtaa
+    [SerializeField] float turnSpeed = 5f; //kääntää katseen eli ENEMY katsoo pelajaan kohti
 
     bool isProvoked = false;
     NavMeshAgent navMeshAgent;
@@ -38,7 +39,8 @@ public class EnemyAI : MonoBehaviour
     }
 
     private void EngageTarget()
-    {
+    {   
+        FaceTarget();
         //Jahtaa pelaajaan
         if (distanceToTarget >= navMeshAgent.stoppingDistance) 
         {
@@ -65,6 +67,15 @@ public class EnemyAI : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("attack", true); //iskee jotakin esim. käsi tai muu vastaava
         Debug.Log(name + "has seeked and is destroying " + target.name);
+    }
+
+    //ENEMY KÄÄNTÄÄ KATSEEN
+    private void FaceTarget()
+    {
+        Vector3 direction = ( target.position - transform.position ).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z ));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);
+        // transform.rotation = where the target is & certain speed
     }
 
     ////////////////

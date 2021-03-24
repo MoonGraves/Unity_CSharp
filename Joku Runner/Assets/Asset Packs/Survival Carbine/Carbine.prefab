@@ -664,6 +664,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Muzzle Flash - Orange
       objectReference: {fileID: 0}
+    - target: {fileID: 3614249443508621660, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.9622642
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614249443508621660, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.2716832
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614249443508621660, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.21333215
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614249443508621660, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0.9339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614249443508621660, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.9242797
+      objectReference: {fileID: 0}
+    - target: {fileID: 3614249443508621660, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.12775902
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a60d8477aafac045a1f56d3a60c7813, type: 3}
 --- !u!4 &8436679988857822713 stripped
