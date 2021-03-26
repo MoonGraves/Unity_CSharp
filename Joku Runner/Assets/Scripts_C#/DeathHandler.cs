@@ -17,6 +17,7 @@ public class DeathHandler : MonoBehaviour
     {
         gameOverCanvas.enabled = true;
         Time.timeScale = 0;
+        FindObjectOfType<WeaponSwitch>().enabled = false; //lopettaa aseen vaihdon, heti kun pelaaja kuolee/peli päättyy
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }

@@ -14,32 +14,43 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] GameObject hitEffect; //jokin object saa osumman & effecti näkyvät & (Hit Effect )
     [SerializeField] Ammo ammoSlot; //lukaisee ammo class scriptin
+    [SerializeField] AmmoType ammoType; //ase oma tyyppi eli pistooli, shotgun ja jne & itse voi määrittää sen luokituksen Ammo.cs shell, rocket ja jne ja paljon ammo määrä on
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] float timeBetweenShots = 0.5f; //ajan laukaus, että monta sekunttia per käyttäjä saisi laukauksen & vaikka kuinka usein klikkailee sen alle 0.5s
+
+
+    bool canShoot = true;
+
+    private void onEnablde()
     {
-        
+        canShoot = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")) 
+        if (Input.GetMouseButtonDown(0) && canShoot == true ) 
         {
-            Shoot();
+           StartCoroutine(Shoot());
         }
     }
 
-    private void Shoot()
+    IEnumerator Shoot()
     {
+        canShoot = false;
+
         //KUNNES AMMO LOPPUU EI ENÄÄ TOISTA SITÄ EFFECT JA MUU PANNOSTA
-        if(ammoSlot.GetCurrentAmmo() > 0 )
+        if(ammoSlot.GetCurrentAmmo(ammoType) > 0 )
         {
             PlayMuzzleFlash();
             ProcessRaycast();
-            ammoSlot.ReduceCurrentAmmo();
+            ammoSlot.ReduceCurrentAmmo(ammoType);
         }
+
+        yield return new WaitForSeconds(timeBetweenShots);
+        canShoot = true;
     }
+
 
     private void PlayMuzzleFlash() //Laukausen aseen piipun pään effecti
     {

@@ -449,6 +449,7 @@ GameObject:
   - component: {fileID: 6145461847966924652}
   - component: {fileID: 6145461847968054700}
   - component: {fileID: 1077964093830082747}
+  - component: {fileID: 4437348553790597520}
   m_Layer: 0
   m_Name: Carbine
   m_TagString: Untagged
@@ -538,11 +539,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FPCamera: {fileID: 0}
-  range: 100
+  range: 35
   damage: 30
   muzzleFlash: {fileID: 2046693721166119516}
   hitEffect: {fileID: 8894298325354960304, guid: 979b1e8545286324ca831a4ac0f7ff43, type: 3}
   ammoSlot: {fileID: 0}
+  timeBetweenShots: 0.5
+--- !u!114 &4437348553790597520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6145461847970243436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 521c1f16464b9344a9032eecc7a20d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fpsCamera: {fileID: 0}
+  fpsController: {fileID: 0}
+  zoomedOutFOV: 60
+  zoomedInFOV: 20
+  zoomOutSensitivity: 2
+  zoomInSensitivity: 0.5
 --- !u!1 &6145461847970243438
 GameObject:
   m_ObjectHideFlags: 0

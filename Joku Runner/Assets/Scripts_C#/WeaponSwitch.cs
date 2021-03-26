@@ -6,64 +6,100 @@ public class WeaponSwitch : MonoBehaviour
 {
     //USER/PELAAJA VAIHTAA ASEEN
 
-    public int selectedWeapon = 0;
+    [SerializeField] int currentWeapon = 0;
     // Start is called before the first frame update
     void Start()
     {
-        SelectedWeapon();
+        SetWeaponActive();
     }
 
     // Update is called once per frame
     void Update()
     {
-        int previousSelectedWeapon = selectedWeapon;
+        //Edellinen ase
+        int previousWeapon = currentWeapon;
 
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f )
+        ProcessKeyInput();
+        ProcessScrollWheel(); //hiiren rulla
+
+        if(previousWeapon != currentWeapon )
         {
-            if (selectedWeapon >= transform.childCount - 1) 
-                selectedWeapon = 0;
-            else 
-                selectedWeapon++;
+            SetWeaponActive();
         }
-        
-        if (Input.GetAxis("Mouse ScrollWheel") < 0f )
+    }
+
+    //PLAYER MOUSE SCROLLER
+    private void ProcessScrollWheel()
+    {
+        //IF GOING UP & SCROLLAA HIIREN KOHTI ETEENPÄIN/YLÖS
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
-            if (selectedWeapon <= 0 ) 
-                selectedWeapon = transform.childCount -1;
-            else 
-                selectedWeapon--;
+            if (currentWeapon >= transform.childCount - 1)
+            {
+                currentWeapon = 0;
+            }
+
+            else
+            {
+                currentWeapon++;
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        //IF GOING DOWN & SCROLLAA HIIREN KOHTI ETEENPÄIN/ALAS
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
-            selectedWeapon = 0;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2) && transform.childCount >= 2)
-        {
-            selectedWeapon = 1;
-        }
-
-        //Hiiren scrollaus edellinen ase
-        if (previousSelectedWeapon != selectedWeapon)
-        {
-            SelectedWeapon();
+            if (currentWeapon <= 0)
+            {
+                currentWeapon = transform.childCount -1;
+            }
+            
+            else
+            {
+                currentWeapon--;
+            }
         }
 
     }
 
+    //KEYBOARD NUMBER CHANGE WEAPONS
+    private void ProcessKeyInput()
+    {   
+        //keyboard 1 eka rynkky
+        if (Input.GetKeyDown(KeyCode.Alpha1)) 
+        {
+            currentWeapon = 0; //asettaa asen 0
+        }
+
+        //Keyboard 2 pistooli
+        if (Input.GetKeyDown(KeyCode.Alpha2)) 
+        {
+            currentWeapon = 1; //asettaa asen 1 
+        }
+
+        //Keyboard 3 shotgun
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            currentWeapon = 2; //asettaa asen 2
+        }
+    }
+
     //Valitse aseesi
-    void SelectedWeapon()
+    void SetWeaponActive()
     {
-        int i = 0;
+        int weaponIndex = 0; //Pistooli 1, eka ase 0, shotgun 2,
         foreach (Transform weapon in transform) 
         {
-            if ( i == selectedWeapon )
+            if ( weaponIndex == currentWeapon )
+            {
                 weapon.gameObject.SetActive(true);
+            }
             else
+            {
                 weapon.gameObject.SetActive(false);
-            i++;
+            }
+            weaponIndex++;
         }
+
     }
 
 }
