@@ -5,6 +5,9 @@ using UnityEngine;
 public class Enemy_attack : MonoBehaviour
 {
     //Enemy attack
+    
+    //ASETA JOS ENSIMMÄISEN ENEMY HYÖKKÄÄ PELAAJAAN, ASETA NOI Animator.cs sieltä >> Appply Root Motion päälle, & Update Mode (Animate Phyics)
+    //TÄÄ TARKOITTAA, ETTÄ TEKEE SAMAN ANIMATION TAI TEMPUN , ETTÄ HYÖKKÄÄ PELAAJAN KIMPPUUN JA JNE
 
     PlayerHealth target;
     [SerializeField] float damage = 40f;

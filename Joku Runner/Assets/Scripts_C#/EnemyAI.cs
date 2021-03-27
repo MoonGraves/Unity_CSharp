@@ -7,9 +7,10 @@ public class EnemyAI : MonoBehaviour
 {
     //ENEMY asetettaan jokin target, etttä seuraa x henkilön perään
     // Start is called before the first frame update
-    [SerializeField] Transform target; //target jahtaa pelaajan
+    //[SerializeField] Transform target; //target jahtaa pelaajan
     [SerializeField] float chaseRange = 10f; //seuraa / jahtaa pelaajan  & että saapuu sen tietyn lähistöllä alkaa jahtaa
     [SerializeField] float turnSpeed = 5f; //kääntää katseen eli ENEMY katsoo pelajaan kohti
+    Transform target;
 
     bool isProvoked = false;
     NavMeshAgent navMeshAgent;
@@ -18,6 +19,7 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        target = FindObjectOfType<PlayerHealth>().transform; //target jahtaa pelaajan
     }
 
     // Update is called once per frame

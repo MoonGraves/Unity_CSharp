@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+
+
 
 public class Weapon : MonoBehaviour
 {
@@ -18,6 +21,7 @@ public class Weapon : MonoBehaviour
 
     [SerializeField] float timeBetweenShots = 0.5f; //ajan laukaus, että monta sekunttia per käyttäjä saisi laukauksen & vaikka kuinka usein klikkailee sen alle 0.5s
 
+    [SerializeField] TextMeshProUGUI ammoText; //pelajaa näkee paljon pannosta on käytettävissä
 
     bool canShoot = true;
 
@@ -29,10 +33,18 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DisplayAmmo();
         if (Input.GetMouseButtonDown(0) && canShoot == true ) 
         {
            StartCoroutine(Shoot());
         }
+    }
+
+    //Tulostetaan paljon ammoa käyttäjällä on aktivoituneena
+    private void DisplayAmmo ()
+    {
+        int currentAmmo = ammoSlot.GetCurrentAmmo(ammoType);
+        ammoText.text = currentAmmo.ToString();
     }
 
     IEnumerator Shoot()
