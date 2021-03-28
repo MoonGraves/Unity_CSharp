@@ -5,10 +5,11 @@ using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
-    //PELAAJAN HEALTH 
-    [SerializeField] float hitPoints = 100f; //PELAAJAN hitpoint on ton verran & sitä voi muuttaakin
+    //PELAAJAN HEALTH & UI PELAAJAN HEALTH MÄÄRÄ, ENNEN KUIN TULEE GAME OVER
+    public float hitPoints = 100f; //PELAAJAN hitpoint on ton verran & sitä voi muuttaakin
+    public float currentHealth;
 
-    [SerializeField] TextMeshProUGUI healthText; 
+    [SerializeField] TextMeshProUGUI healthText;
 
     //joku method which reduces hitpoints by the amont of damage & damage methodi
 
@@ -22,14 +23,16 @@ public class PlayerHealth : MonoBehaviour
             //Debug.Log("You dead, my glip glop");
             GetComponent<DeathHandler>().HandleDeath(); //lukaisee DeathHandler.cs tiedoston
         }
-        
     }
 
+    ////////////////////////////////////////////
+    //UPDATE DISPLAY THE PLAYER HEALTH VALUE LEFT
     void Update() 
     {
         DisplayHealth();
     }
 
+    //PELISSÄ MÄÄRITETTY ESIM. 100HP , JOKA KERTA KUN ENEMY ISKEE PELAJAAN NIIN PALJON ON JÄLJELLÄ HP RUUDUSSA
     public void DisplayHealth()
     {
         float currentHealth = hitPoints;

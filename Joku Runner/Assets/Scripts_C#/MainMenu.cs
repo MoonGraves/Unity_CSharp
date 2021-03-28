@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    //MAINMENU & OPTION MENU
+    // >>> MAINMENU & OPTION MENU <<<
+
     /*ASETA SCENE JÄRJESTYS, KOSKA TÄMÄ ON TÄRKEÄ, ETTÄ MAINMENU ON ENSIMMÄISESSÄ RUUDUSSA, JONKA JÄLKEEN PÄÄSEE PELAA & TOIMINTAAN
     
     FILE >> BUILD SETTINGS >> sieltä asetat mikä scene tulee ensimmäisenä, 
     tässä on määritetty että MENU on ensimmäisenä (MainMenu) ja jonka jälkeen tulee SANDBOX (GAME)
+
+    TARKISTA, ETTÄ KANSION:: ASSETS > SCENES > luotu jokin scene & koska tämä MainMenu.cs kuuluu sinne
     */
 
     public void PlayGame()

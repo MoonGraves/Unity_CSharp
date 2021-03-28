@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    // GAMEOVER CANVAS & UI >> GAME OVER CANVAS
+    // TÄMÄ ON >> GAMEOVER CANVAS & UI >> GAME OVER CANVAS <<<
     /*NAPPI- Play again & Siirrä tämä >> (PLAY AGAIN BUTTON) >> Scrolla alas (BUTTON) >> On click () mitä aluksi lukee (List is Empty)
     klikkaa sieltä oikea ala kulmasta pikku + , ja raahaa tämä scriptti siihen missä lukee (None Object) & kuin lukaisee tämän file.cs
      missä lukee, tyhjä funktio sieltä valitset >> Scene Loader >> Reload Game() & minkä jälkeen ponnahtaa SceneLoader.ReloadGame
