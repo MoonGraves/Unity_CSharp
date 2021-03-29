@@ -10,7 +10,7 @@ public class HealthPickUp : MonoBehaviour
     [SerializeField] float healthValue = 15f;
     [SerializeField] PlayerHealth playerHP;  //Lukaisee ensin tiedoston ja mitäkin tekijänssä
 
-    void Awake() 
+    void Awake()
     {
         playerHP = FindObjectOfType<PlayerHealth>();
     }

@@ -10,9 +10,15 @@ public class AmmoPickUp : MonoBehaviour
     //ADD AMMO TO PLAYER WEAPONS + FOR AMMO TYPE 
     [SerializeField] int ammoAmount = 5;
     [SerializeField] AmmoType ammoType; //Shell, Bullet, Rockets
+    
+    void Update() 
+    {
+        //akseli rotaation ( xyz )
+        //gameObject.transform.Rotate(new Vector3(0f, 50f, 0f) * Time.deltaTime);
+    }
 
     //MUISTA MÄÄRITTÄÄ ITSE PELAAJA TAG >> Player
-    private void OnTriggerEnter(Collider other) 
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player" )
         {

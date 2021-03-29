@@ -6,8 +6,8 @@ using TMPro;
 public class PlayerHealth : MonoBehaviour
 {
     //PELAAJAN HEALTH & UI PELAAJAN HEALTH MÄÄRÄ, ENNEN KUIN TULEE GAME OVER
-    public float hitPoints = 100f; //PELAAJAN hitpoint on ton verran & sitä voi muuttaakin
-    public float currentHealth;
+    public float hitPoints = 100f; //PELAAJAN hitpoint on ton verran & sitä voi muuttaakin & MAKSIMI HEALTH MÄÄRÄ
+    public float currentHealth; //TÄLLÄ HETKELLÄ MITEN PALJO ON HEALTH JÄLJELLÄ & OISKI ENEMMY HITTANNUT PELAAJAAN
 
     [SerializeField] TextMeshProUGUI healthText;
 
