@@ -5221,6 +5221,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 100
+  currentHealth: 0
+  healthText: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!114 &5585219113140226916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5788,6 +5791,9 @@ MonoBehaviour:
   muzzleFlash: {fileID: 3086657397965384648}
   hitEffect: {fileID: 8894298325354960304, guid: 979b1e8545286324ca831a4ac0f7ff43, type: 3}
   ammoSlot: {fileID: 0}
+  ammoType: 0
+  timeBetweenShots: 0.5
+  ammoText: {fileID: 0}
 --- !u!1 &8761914082022589161
 GameObject:
   m_ObjectHideFlags: 0
