@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/First Room.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Scary_Cellar.unity
+    guid: b6ca1756db6b14945b4116ce8880ae82
+  - enabled: 1
+    path: Assets/Scenes/Labra.unity
+    guid: 34d9b9b2479c052468c62c35861f40f6
+  m_configObjects: {}
