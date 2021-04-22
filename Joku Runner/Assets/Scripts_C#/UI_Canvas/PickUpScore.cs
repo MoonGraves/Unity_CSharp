@@ -10,7 +10,7 @@ public class PickUpScore : MonoBehaviour
     public AudioSource collectSound;
     private Vector3 rotation;
 
-    //public int scorePoints;
+    //public int scorePoints; //upottaa tää scecrettoken
 
     [SerializeField] static int scorePoints = 0;
     [SerializeField] int pickUpScore = 0;

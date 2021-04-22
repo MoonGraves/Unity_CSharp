@@ -15,30 +15,51 @@ public class ObjectHint : MonoBehaviour
     public static bool ObjectTrigger = false;
     public GameObject ObjectTriggerUI;
     
-    //
-    private bool HintEnabled;
- 
-    void OnTriggerEnter(Collider other) 
+
+    //teksti [F] teke jotakin
+    public GameObject HintText;
+
+    //Pelaaja koskee collider alueeseen
+    private void OnTriggerEnter(Collider other2) 
     {
-        if (other.tag == "Player")
+        HintText.SetActive(true);
+    }
+ 
+    public void OnTriggerStay(Collider other) 
+    {
+        
+        this.gameObject.GetComponent<ObjectHint>().enabled = true;
+        if ((other.tag == "Player") && Input.GetKeyDown(KeyCode.F))
         {
             uiObject.SetActive(true);
-                Debug.Log("Hint the object");
+            HintText.SetActive(false);
+            Debug.Log("Hint the object");
             //Destroy(gameObject);
         }
+
+        /*switch(other.gameObject.tag)
+        {    
+            case "Hint" :
+                Debug.Log("Avaa hint?");
+                break;
+        }*/
+
     }
 
     //Kun pelaaja poistuu siitä kuution alueesta, niin panel ei aktivoidu enää
     void OnTriggerExit(Collider other) 
     {
-        uiObject.SetActive(false);
-        Destroy(cube); // tuhoo objektin, kun pelaaja on nostanut sen
+        this.gameObject.GetComponent<ObjectHint>().enabled = false;
+        uiObject.SetActive(false); //ui panel
+        HintText.SetActive(false); //ui teksti mikä on keskellä että [F] Open Panel
+        //Destroy(cube); // tuhoo objektin, kun pelaaja on nostanut sen
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        uiObject.SetActive(false); //kerätäv object avaa panel tekstin
+        uiObject.SetActive(false); //kerättäv object avaa panel tekstin
+        HintText.SetActive(false); //ui teksti mikä on keskellä että [F] Open Panel
     }
 
 
