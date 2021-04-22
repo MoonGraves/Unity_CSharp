@@ -4,9 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Zombie
-  - Item
-  - Hint
+  - Hit
   layers:
   - Default
   - TransparentFX
