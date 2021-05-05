@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject EnemyGo; //tähän tulee kansion prefabs toi enemyGO
     // Start is called before the first frame update
 
-    float maxSpawnRateInSeconds = 2f; //saappuu peli ruutuun missä ajassa esim 5sekunnissa
+    float maxSpawnRateInSeconds = 0.5f; //saappuu peli ruutuun missä ajassa esim x-sekunnissa
     void Start()
     {
 

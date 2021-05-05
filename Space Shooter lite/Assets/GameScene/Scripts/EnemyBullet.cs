@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    float speed;
-    Vector2 _direction; //direkti of the bullet
+    [SerializeField] float speed;
+    Vector2 direktion; //direkti of the bullet
 
     bool isReady; //known when the bullet direction is set
 
@@ -13,14 +13,19 @@ public class EnemyBullet : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        speed = 5f;
+        speed = 0f;
         isReady = false;
+    }
+
+    void Start()
+    {
+
     }
 
     //set bullet's direction
     public void SetDirection(Vector2 direction)
     {
-        _direction = direction.normalized;
+        direktion = direction.normalized;
         
         isReady = true;
     }
@@ -32,7 +37,7 @@ public class EnemyBullet : MonoBehaviour
         {
             Vector2 position = transform.position;
 
-            position += _direction * speed * Time.deltaTime;
+            position += direktion * speed * Time.deltaTime;
 
             transform.position = position;
 
@@ -51,11 +56,4 @@ public class EnemyBullet : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D col) 
-    {
-        if(col.tag == "PlayerShipTag")
-        {
-            Destroy(gameObject);
-        }    
-    }
 }

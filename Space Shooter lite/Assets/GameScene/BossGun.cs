@@ -2,26 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyGun : MonoBehaviour
+public class BossGun : MonoBehaviour
 {
+    
     public GameObject EnemyBulletGO; //tähän tulee se enemy bullet kuva
-
     public float bulletSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
-        //fire an enemy bullet after 1 seconds
-        Invoke("FireEnemyBullet", 0.25f);
+        Invoke("FireEnemyBullet", 4f);
     }
 
     // Update is called once per frame
     void Update()
     {
-    
+        
     }
 
-    
     void FireEnemyBullet()
     {
         GameObject playerShip = GameObject.Find("PlayerGO");
@@ -38,5 +36,4 @@ public class EnemyGun : MonoBehaviour
             bullet.GetComponent<EnemyBullet>().SetDirection(direction);
         }
     }
-    
 }

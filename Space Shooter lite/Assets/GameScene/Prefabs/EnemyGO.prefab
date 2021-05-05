@@ -190,6 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyBulletGO: {fileID: 5740947990176677728, guid: 81895462143ca5c498927124cd9078f7, type: 3}
+  bulletSpeed: 3
 --- !u!50 &1090334899880895068
 Rigidbody2D:
   serializedVersion: 4
