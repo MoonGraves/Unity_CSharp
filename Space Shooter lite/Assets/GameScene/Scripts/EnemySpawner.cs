@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject EnemyGo; //tähän tulee kansion prefabs toi enemyGO
+    public GameObject EnemyGo2;
+
     // Start is called before the first frame update
 
     float maxSpawnRateInSeconds = 0.5f; //saappuu peli ruutuun missä ajassa esim x-sekunnissa
@@ -26,7 +28,10 @@ public class EnemySpawner : MonoBehaviour
         Vector2 max = Camera.main.ViewportToWorldPoint ( new Vector2 (1,1));
 
         GameObject anEnemey = (GameObject)Instantiate(EnemyGo);
-        anEnemey.transform.position = new Vector2 (Random.Range (min.x, max.x), max.y);
+        GameObject anEnemey2 = (GameObject)Instantiate(EnemyGo2);
+        
+        anEnemey.transform.position = new Vector2(Random.Range (min.x, max.x), max.y);
+        anEnemey2.transform.position = new Vector2(Random.Range (min.x, max.x), max.y);
 
         //schedule next enemy
         ScheduleNextEnemySpawn();

@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2001980315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2305756419659863503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4babae459c86b62408561f4815930d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 5740947990176677728, guid: 81895462143ca5c498927124cd9078f7, type: 3}
+  fireRate: 1
 --- !u!1 &5788322858748311240
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +25,6 @@ GameObject:
   - component: {fileID: 5788322858748311244}
   - component: {fileID: 5788322858748311247}
   - component: {fileID: 5788322858748311246}
-  - component: {fileID: 5788322858748311241}
   - component: {fileID: 4129711594257582350}
   m_Layer: 0
   m_Name: Enemy2GO
@@ -105,19 +118,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5788322858748311241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5788322858748311240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4babae459c86b62408561f4815930d6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 5740947990176677728, guid: 81895462143ca5c498927124cd9078f7, type: 3}
 --- !u!114 &4129711594257582350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExplosionGO: {fileID: 4575663522456562186, guid: a7ef104fe230e1b4fb812d1642d2fee1, type: 3}
-  EnemyBulletGO: {fileID: 0}
+  EnemyBulletGO: {fileID: 5740947990176677728, guid: 81895462143ca5c498927124cd9078f7, type: 3}
 --- !u!1001 &5788322859002505903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -189,6 +189,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81895462143ca5c498927124cd9078f7, type: 3}
+--- !u!1 &2305756419659863503 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5740947990176677728, guid: 81895462143ca5c498927124cd9078f7, type: 3}
+  m_PrefabInstance: {fileID: 5788322859002505903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5225146451561675087 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1789956531922916320, guid: 81895462143ca5c498927124cd9078f7, type: 3}

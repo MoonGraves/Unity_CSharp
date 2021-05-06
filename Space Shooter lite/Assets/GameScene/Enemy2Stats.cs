@@ -5,15 +5,15 @@ using UnityEngine;
 public class Enemy2Stats : MonoBehaviour
 {
     [SerializeField] 
-    GameObject bullet;
+    GameObject bullet; //tähän tulee mikä prefabs bullet 
 
-    public float fireRate;
+    [SerializeField] float fireRate;
     float nextFire;
 
     // Start is called before the first frame update
     void Start()
     {
-        fireRate = 0.75f; //laukauksen aika
+        fireRate = 1.25f; //laukauksen aika
         nextFire = Time.time;
     }
 

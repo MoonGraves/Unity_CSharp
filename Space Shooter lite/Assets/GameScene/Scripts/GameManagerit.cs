@@ -16,6 +16,8 @@ public class GameManagerit : MonoBehaviour
 
     public GameObject scoreUITextGO;
 
+    public GameObject BeginPanel;
+
 
     // Start is called before the first frame update
 
@@ -52,12 +54,16 @@ public class GameManagerit : MonoBehaviour
 
                 menuButton.SetActive(true);
 
+                BeginPanel.SetActive(true);
+
                 break;
 
             case GameManagerState.GamePlay:
                 playerButton.SetActive(false);
 
                 menuButton.SetActive(false);
+
+                BeginPanel.SetActive(false);
 
                 //reset the score
                 scoreUITextGO.GetComponent<GameScore>().Score = 0;
